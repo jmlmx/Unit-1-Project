@@ -12,9 +12,10 @@ body {
 }
 
 header {
-    font-size: 4vmin;
-    color: darkgray;
-    letter-spacing: 1vmin;  
+    font-family: 'Monoton', cursive;
+    font-size: 6vmin;
+    color: black;
+    letter-spacing: .5vmin;  
 }
 
 h1 {
@@ -24,27 +25,29 @@ h1 {
 
 #board {
     display: grid;
-    grid-template-columns: repeat(7, 10vmin);
-    grid-template-rows: repeat(6, 10vmin);
-    gap: 1vmin;
-    margin-top: -4vmin;
+    grid-template-columns: repeat(4, 13vmin);
+    grid-template-rows: repeat(4, 13vmin);
+    gap: 3vmin;
+    margin-top: 4vmin;
 }
 
+
 #board > div {
-    border-radius: 50%;
-    border: 0.01vmin solid grey;
+    border-radius: 30%;
+    border: 0.1vmin solid grey;
 }
 
 button {
-    margin-top: 4vmin;
+    margin-top: 5vmin;
     padding: 2vmin;
     font-size: 2vmin;
-    border-radius: 2vmin;
+    border-radius: 4vmin;
     border: .1vmin solid grey;
-    color: grey;
+    color: black;
+    font-family: 'Monoton', cursive;
 }
 
 button:hover {
     color: white;
-    background-color: grey;
+    background-color: black;
 }
