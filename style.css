@@ -33,7 +33,7 @@ h1 {
 
 
 #board > div {
-    border-radius: 30%;
+    border-radius: 20%;
     border: 0.1vmin solid grey;
 }
 
@@ -41,10 +41,11 @@ button {
     margin-top: 5vmin;
     padding: 2vmin;
     font-size: 2vmin;
-    border-radius: 4vmin;
+    border-radius: 2vmin;
     border: .1vmin solid grey;
     color: black;
     font-family: 'Monoton', cursive;
+    letter-spacing: .5vmin;
 }
 
 button:hover {
