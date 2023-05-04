@@ -15,9 +15,11 @@ let board
 /*----- cached elements  -----*/
 const boxEls = [...document.querySelectorAll('#board > div')]
 const playAgainBtn = document.querySelector('button')
+const startBtn = document.querySelector('start')
 
 /*----- event listeners -----*/
 playAgainBtn.addEventListener('click', handleClick)
+startBtn.addEventListener('click', startGame)
 /*----- functions -----*/
 Init()
 
@@ -32,6 +34,13 @@ winner = false
 render()
 }
 
+function startGame() {
+    $(".mask").removeClass("active");
+    Init()
+    render()
+}
+
 function handleClick(evt) {
     const colIdx = boxEls.indexOf(evt.target)
 }
+

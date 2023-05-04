@@ -54,9 +54,9 @@ button:hover {
     cursor: pointer;
 }
 
-.show{
+.start {
     position: absolute;
-    top: 50%;
+    top: 70%;
     left: 50%;
     width: 15vmin;
     height: 10vmin;
@@ -70,7 +70,7 @@ button:hover {
     &:hover{
     background: black;
     color: white;
-    border: 1px solid black;
+    border: 1px solid white;
     }
 
     &:active{
@@ -78,20 +78,7 @@ button:hover {
     }
 }
 
-
-.close{
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 35px;
-    height: 30px;
-    background: #000;
-    color: #fff;
-    cursor: pointer;
-    border: 0;
-}
-
-.mask{
+.mask {
     position: fixed;
     top: 0;
     left: 0;
@@ -104,21 +91,32 @@ button:hover {
     transition: 0.7s;
 }
 
-.modal{
+.modal {
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 400px;
-    height: 300px;
+    right: 50%;
+    width: 50vmin;
+    height: 60vmin;
     margin-left: -200px;
-    margin-top: -150px;
-    background: #bdc3c7;
+    margin-top: -300px;
+    background: black;
+    border-radius: 10%;
     z-index: 100;
-    visibility: hidden;
-    opacity: 0;
+    visibility: visible;
+    opacity: .9;
     transition: 0.5s ease-out;
     transform: translateY(45px);
 }
+
+.modal > h1, p, li {
+    text-align: center;
+    color: white;
+    font-family:  'Bungee Hairline', cursive;
+    margin-top: 3vmin;
+
+}
+
 .active{
     visibility: visible;
     opacity: 1;
