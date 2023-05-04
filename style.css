@@ -59,6 +59,10 @@ button:hover {
     cursor: pointer;
 }
 
+#replay-button {
+    visibility: hidden;
+}
+
 .start {
     position: absolute;
     top: 70%;
