@@ -35,7 +35,7 @@ render()
 }
 
 function startGame() {
-    $(".mask").removeClass("active");
+    $(".mask").addClass("inactive");
     Init()
     render()
 }
