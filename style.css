@@ -112,8 +112,8 @@ button:hover {
 
 }
 
-.inactive{
-    visibility: hidden;
+.inactive {
+    display: none;
     opacity: 0;
 }
 
