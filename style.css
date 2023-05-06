@@ -40,6 +40,7 @@ h1 {
 #board > div {
     border-radius: 20%;
     border: 0.1vmin solid grey;
+    box-shadow: black 0px 5px 15px;
 }
 
 button {
@@ -63,7 +64,7 @@ button:hover {
     visibility: hidden;
 }
 
-.start {
+#start {
     position: absolute;
     top: 70%;
     left: 50%;
@@ -87,19 +88,6 @@ button:hover {
     }
 }
 
-.mask {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(62, 73, 84, 0.8);
-    z-index: 50;
-    visibility: hidden;
-    opacity: .9s;
-    transition: 0.7s;
-}
-
 .modal {
     position: fixed;
     top: 50%;
@@ -113,8 +101,7 @@ button:hover {
     z-index: 100;
     visibility: visible;
     opacity: .9;
-    transition: 0.5s ease-in-out;
-    transform: translateZ(45px);
+    transform:translateY(45px);
 }
 
 .modal > h1, p, li {
@@ -130,8 +117,3 @@ button:hover {
     opacity: 0;
 }
 
-.inactive + .modal{
-    visibility: visible;
-    opacity: 1;
-    transform: translateY(0);
-}
