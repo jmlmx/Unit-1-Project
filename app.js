@@ -5,10 +5,6 @@ const randomization = []
 let playerGuesses = 0
 let imagesPack = []
 let guessesLeft = guessLimit - playerGuesses
-let choices = {
-    "guess1": null,
-    "guess2": null
-}
 let winner
 let board
 /*----- cached elements  -----*/
@@ -39,6 +35,7 @@ function startGame() {
 }
 
 function handleClick(evt) {
+    boxEls.forEach()
     checkMatch()
 }
 
@@ -50,12 +47,41 @@ function renderGuessesLeft() {
     
 }
 
-function checkMatch(choice1, choice2) {
+function boxRandomize() {
+    boxEls.forEach(function (boxEl) {
+        let randomNum = math.floor(Math.random() * 16)
+        boxEl.style.order = randomNum
+    })
+}
 
+function checkMatch() {
+    let choices = {
+        "guess1": null,
+        "guess2": null
+    }
+
+    let matchCount = 0
+
+    if (!choices[guess1] && !choices[guess2]) {
+        choices[guess1] = boxEl
+        boxEl.classList.add('shown')
+    } else if (choices[guess1] && !choices[guess2]) {
+        choices[guess2] = boxEl
+        boxEl.classList.add('shown')
+            if (choices[guess1].img === choices[guess2]) {
+                choices[guess1].style.pointerEvents = "none"
+                choices[guess2].style.pointerEvents = "none"
+                choices[guess1] = null
+                choices[guess2] = null
+                matchCount++
+
+            }
+    }
+    
 }
 
 function restart() {
-
+    
 }
 
 
