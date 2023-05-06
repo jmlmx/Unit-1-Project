@@ -18,7 +18,7 @@ header {
     letter-spacing: .5vmin;  
 }
 
-#guess-limit {
+#guess-limit, #player-guesses {
     font-family: 'Bungee Hairline', cursive;
     font-size: 3vmin;
 }
@@ -44,7 +44,7 @@ h1 {
 }
 
 button {
-    margin-top: 5vmin;
+    margin-top: 3vmin;
     padding: 2vmin;
     font-size: 2vmin;
     border-radius: 2vmin;
@@ -78,13 +78,13 @@ button:hover {
     cursor: pointer;
     
     &:hover{
-    background: black;
-    color: white;
-    border: 1px solid white;
+        background-color: black;
+        color: white;
+        border: 1px solid white;
     }
 
     &:active{
-    transform: scale(0.9);
+        transform: scale(0.9);
     }
 }
 
@@ -94,7 +94,8 @@ button:hover {
     left: 50%;
     width: 50vmin;
     height: 60vmin;
-    margin-left: -240px;
+    margin-left: -230px;
+    margin-right: 240px;
     margin-top: -300px;
     background: black;
     border-radius: 10%;
@@ -104,7 +105,7 @@ button:hover {
     transform:translateY(45px);
 }
 
-.modal > h1, p, li {
+.modal > h1 {
     text-align: center;
     color: white;
     font-family:  'Bungee Hairline', cursive;
@@ -112,8 +113,15 @@ button:hover {
 
 }
 
+.modal > p, li {
+    text-align: center;
+    color: white;
+    font-family:  'Bungee Hairline', cursive;
+    margin-top: 2vmin;
+    font-size: 2vmin; 
+}
+
 .inactive {
     display: none;
-    opacity: 0;
 }
 
