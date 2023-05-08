@@ -15,7 +15,7 @@ header {
     font-family: 'Monoton', cursive;
     font-size: 6vmin;
     color: black;
-    letter-spacing: .5vmin;  
+    letter-spacing: .5vmin;
 }
 
 #guess-limit, #player-guesses {
@@ -32,8 +32,9 @@ h1 {
     display: grid;
     grid-template-columns: repeat(4, 13vmin);
     grid-template-rows: repeat(4, 13vmin);
-    gap: 3vmin;
-    margin-top: 4vmin;
+    gap: 5vmin;
+    column-gap: 5vmin;
+    margin-top: 2vmin;
 }
 
 
@@ -41,6 +42,9 @@ h1 {
     border-radius: 20%;
     border: 0.1vmin solid grey;
     box-shadow: black 0px 5px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 button {

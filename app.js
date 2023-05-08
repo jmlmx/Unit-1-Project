@@ -4,11 +4,10 @@ const randomization = []
 /*----- state variables -----*/
 let playerGuesses = 0
 let imagesPack = []
-let guessesLeft = guessLimit - playerGuesses
 let winner
 let board
 /*----- cached elements  -----*/
-const boxEls = [...document.querySelectorAll("#board > div")]
+const boxEls = document.querySelectorAll("#board > div")
 const playAgainBtn = document.querySelector("replay-button")
 const startBtn = document.getElementById("start")
 const modalEl = document.getElementById("start-modal")
@@ -26,31 +25,29 @@ board = [
     [0, 0, 0, 0]
 ]
 winner = false
+boxRandomize()
 render()
 }
 
 function startGame() {
     modalEl.classList.add('inactive');
-
+    boxRandomize()
+    //render()
 }
 
-function handleClick(evt) {
-    boxEls.forEach()
-    checkMatch()
+function handleClick(boxEls) {
+    boxEls.addEventListener('click', checkMatch)
+    renderBoard()
 }
 
 function renderBoard() {
 
 }
 
-function renderGuessesLeft() {
-    
-}
-
 function boxRandomize() {
-    boxEls.forEach(function (boxEl) {
+    boxEls.forEach(function(boxEl) {
         let randomNum = math.floor(Math.random() * 16)
-        boxEl.style.order = randomNum
+        boxEls.style.order = randomNum
     })
 }
 
@@ -74,10 +71,21 @@ function checkMatch() {
                 choices[guess1] = null
                 choices[guess2] = null
                 matchCount++
-
+                if (matchCount === 8) setTimeout(() => alert('You Won! Congratulations!'), 2000)
+            } else {
+                choices[guess1].classList.add('hidden')
+                choices[guess2].classList.add('hidden')
+                playerGuesses++
+                setTimeout(() => {
+                    choices[guess1].classList.remove('shown')
+                    choices[guess2].classList.remove('shown')
+                    choices[guess1].classList.remove('hidden')
+                    choices[guess2].classList.remove('hidden')
+                    choices[guess1] = null
+                    choices[guess2] = null
+                }, 2000)    
             }
-    }
-    
+        }    
 }
 
 function restart() {
