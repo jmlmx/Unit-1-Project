@@ -45,7 +45,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    content-visibility: hidden;
+    content-visibility: visible;
 }
 
 button {
@@ -135,10 +135,10 @@ img {
     height: 100%;
 }
 
-.shown {
+.flipped {
     content-visibility: visible;
 }
 
-.hidden {
+.un-flipped {
     content-visibility: hidden;
 }
