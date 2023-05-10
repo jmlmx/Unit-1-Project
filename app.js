@@ -63,9 +63,26 @@ function checkMatch() {
     let second
     let matchCount = 0
 
-    
+    if (first.innerHTML === second.innerHTML) {
+        first.style.pointerEvents = 'none';
+        second.style.pointerEvents = 'none';
+        first = null;
+        second = null;
+        matchCount++;
+        if (matchCount>= 6) setTimeout(() => alert('Game done! Refresh page to replay.'), 2000 );
+    } else {
+        first.classList.add('un-flipped');
+        second.classList.add('un-flipped');
+        setTimeout(() => {
+            first.classList.remove('flipped');
+            second.classList.remove('flipped');
+            first.classList.remove('un-flipped');
+            second.classList.remove('un-flipped');
+            first = null;
+            second = null;
+        }, 2000);
+    }
 }
-
 
 function restart() {
     
