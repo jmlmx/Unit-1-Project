@@ -10,7 +10,8 @@ let board
 const cardsEl = document.querySelectorAll("#card")
 const playAgainBtn = document.querySelector("replay-button")
 const startBtn = document.getElementById("start")
-const modalEl = document.getElementById("start-modal")
+const startModalEl = document.getElementById("start-modal")
+const endModalEl = document.getElementById("end-modal")
 const playerGuessEl = document.getElementById("player-guesses")
 const boardEl = document.querySelector('#board')
 /*----- event listeners -----*/
@@ -31,7 +32,7 @@ render()
 }
 
 function startGame() {
-    modalEl.classList.add('inactive');
+    startModalEl.classList.add('inactive');
     boxRandomize()
     handleClick()
     //render()
@@ -39,7 +40,7 @@ function startGame() {
 
 function handleClick() {
     let clickEvt = () => {
-        card.classList.add(".un-flipped")
+        console.log("close")
     }    
     cardsEl.forEach((card) => {
         card.addEventListener('click', clickEvt)

@@ -40,6 +40,7 @@ h1 {
 
 #card {
     border-radius: 20%;
+    height: 15vmin;
     border: 0.1vmin solid grey;
     box-shadow: black 0px 5px 15px;
     display: flex;
@@ -108,6 +109,10 @@ button:hover {
     visibility: visible;
     opacity: .9;
     transform:translateY(45px);
+}
+
+#end-modal {
+    visibility: hidden;
 }
 
 .modal > h1 {
