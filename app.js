@@ -39,7 +39,7 @@ function startGame() {
 
 function handleClick() {
     let clickEvt = () => {
-        cardsEl.classList.add('.un-flipped')
+        card.classList.add(".un-flipped")
     }    
     cardsEl.forEach((card) => {
         card.addEventListener('click', clickEvt)
