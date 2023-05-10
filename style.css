@@ -38,13 +38,14 @@ h1 {
 }
 
 
-#board > div {
+#card {
     border-radius: 20%;
     border: 0.1vmin solid grey;
     box-shadow: black 0px 5px 15px;
     display: flex;
     justify-content: center;
     align-items: center;
+    content-visibility: hidden;
 }
 
 button {
@@ -135,9 +136,9 @@ img {
 }
 
 .shown {
-
+    content-visibility: visible;
 }
 
 .hidden {
-
+    content-visibility: hidden;
 }
