@@ -38,12 +38,12 @@ function startGame() {
     //render()
 }
 
-function handleClick() {
-    let clickEvt = () => {
-        console.log("close")
-    }    
+function handleClick() {   
     cardsEl.forEach((card) => {
-        card.addEventListener('click', clickEvt)
+        card.addEventListener('click', clickEvt = () => {
+            card.classList.toggle('un-flipped')
+            card.classList.toggle('flipped')
+        })
     });
 }
 
