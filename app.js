@@ -69,7 +69,7 @@ function checkMatch() {
         first = null;
         second = null;
         matchCount++;
-        if (matchCount>= 6) setTimeout(() => alert('Game done! Refresh page to replay.'), 2000 );
+        if (matchCount>= 8) setTimeout(() => alert('Game done! Refresh page to replay.'), 2000 );
     } else {
         first.classList.add('un-flipped');
         second.classList.add('un-flipped');
