@@ -4,6 +4,9 @@ const randomization = []
 /*----- state variables -----*/
 let playerGuesses = 0
 let board
+let firstChoice = null
+let secondChoice = null
+let matchCount = 0           
 /*----- cached elements  -----*/
 const cardsEl = document.querySelectorAll("#card")
 const playAgainBtn = document.querySelector("replay-button")
@@ -39,37 +42,29 @@ function startGame() {
 function handleClick() {   
     cardsEl.forEach((card) => {
         card.addEventListener('click', function() {
-            let firstChoice = null
-            let secondChoice = null
-            let matchCount = 0           
             if (!firstChoice && !secondChoice) {
+                card.classList.toggle('un-flipped')
+                card.classList.toggle('flipped')
                 firstChoice = card;
-                card.classList.toggle('un-flipped')
-                card.classList.toggle('flipped')
             } else if (firstChoice && !secondChoice) {
-                secondChoice = card;
                 card.classList.toggle('un-flipped')
                 card.classList.toggle('flipped')
-                if (secondChoice.innerHTML === firstChoice.innerHTML) {
+                secondChoice = card;
+                if (firstChoice.innerHTML === secondChoice.innerHTML) {
                     firstChoice.style.pointerEvents = 'none'
                     secondChoice.style.pointerEvents = 'none'
                     firstChoice = null
                     secondChoice = null
                     matchCount++
-                    if (matchCount === 8) setTimeout(() => alert('Game done! Refresh page to replay.'), 2000 )
+                    //add matchCount if else
                 } else {
                     firstChoice.classList.toggle('un-flipped')
                     firstChoice.classList.toggle('flipped')
                     secondChoice.classList.toggle('un-flipped')
                     secondChoice.classList.toggle('flipped')
-                    setTimeout(() => {
-                        first.classList.remove('flipped');
-                        second.classList.remove('flipped');
-                        first.classList.remove('un-flipped');
-                        second.classList.remove('un-flipped');
-                        first = null;
-                        second = null;
-                    }, 2000);
+                    firstChoice = null;
+                    secondChoice = null;
+                    
                 }
             }
         })
@@ -114,10 +109,10 @@ function checkMatch() {
             secondChoice.classList.toggle('un-flipped')
             secondChoice.classList.toggle('flipped');
             setTimeout(() => {
-                firstChoice.classList.remove('flipped');
-                secondChoice.classList.remove('flipped');
-                firstChoice.classList.remove('un-flipped');
-                secondChoice.classList.remove('un-flipped');
+                firstChoice.classList.toggle('flipped');
+                secondChoice.classList.toggle('flipped');
+                firstChoice.classList.toggle('un-flipped');
+                secondChoice.classList.toggle('un-flipped');
                 firstChoice = null;
                 secondChoice = null;
             }, 2000);
