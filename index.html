@@ -15,7 +15,7 @@
 <body>
     <header>Concentration</header>
     
-    <section id="guess-limit">Guess Limit: 10</section>
+    <section id="guess-limit">Guess Limit: 20</section>
     <section id="player-guesses">Guesses: 0</section>
     
     <div class="modal" id= "start-modal" role="alert">
@@ -30,8 +30,13 @@
         <button class="start-button" id="start" >Start Game</button>
     </div>
 
-    <div class="modal" id="end-modal" role="alert">
-        <button id="replay-button">PLAY AGAIN</button>
+    <div class="modal inactive" id="win-modal" role="alert">
+        <p>Congratulations! You Won!</p>
+        <button id="replay-button">PLAY AGAIN?</button>
+    </div>
+    <div class="modal inactive" id="loss-modal" role="alert">
+        <p>Better Luck Next Time...</p>
+        <button id="replay-button">PLAY AGAIN?</button>
     </div>
 
     <section id="board">

@@ -1,5 +1,5 @@
 /*----- constants -----*/
-const guessLimit = 10
+const guessLimit = 20
 const randomization = []
 /*----- state variables -----*/
 let playerGuesses = 0
@@ -9,16 +9,16 @@ let secondChoice = null
 let matchCount = 0           
 /*----- cached elements  -----*/
 const cardsEl = document.querySelectorAll("#card")
-const playAgainBtn = document.querySelector("replay-button")
+const playAgainBtn = document.querySelectorAll("replay-button")
 const startBtn = document.getElementById("start")
 const startModalEl = document.getElementById("start-modal")
-const endModalEl = document.getElementById("end-modal")
+const winModalEl = document.getElementById("win-modal")
+const lossModalEl = document.getElementById("loss-modal")
 const playerGuessEl = document.getElementById("player-guesses")
 const boardEl = document.querySelector('#board')
 /*----- event listeners -----*/
 //playAgainBtn.addEventListener('click', restart);
 startBtn.addEventListener('click', startGame)
-//boardEl.addEventListener('click', handleClick)//
 /*----- functions -----*/
 
 function Init() {
@@ -29,14 +29,12 @@ board = [
     [0, 0, 0, 0]
 ]
 cardRandomize()
-render()
 }
 
 function startGame() {
     startModalEl.classList.add('inactive');
-    cardRandomize()
-    handleClick()
-    //render()
+    cardRandomize();
+    handleClick();
 }
 
 function handleClick() {   
@@ -56,7 +54,15 @@ function handleClick() {
                     firstChoice = null
                     secondChoice = null
                     matchCount++
-                    //add matchCount if else
+                    if (matchCount === 8 && playerGuesses < guessLimit) {
+                        winModalEl.classList.remove("inactive")
+                        playAgainBtn.style.visibility = "visible"
+                        boardEl.style.pointerEvents = 'none'
+                    } else if (matchCount !== 8 && playerGuesses > guessLimit) {
+                        lossModalEl.classList.remove("inactive")
+                        playAgainBtn.style.visibility = "visible"
+                        boardEl.style.pointerEvents = 'none'
+                    }
                 } else {
                     firstChoice.classList.toggle('un-flipped')
                     firstChoice.classList.toggle('flipped')
@@ -64,16 +70,16 @@ function handleClick() {
                     secondChoice.classList.toggle('flipped')
                     firstChoice = null;
                     secondChoice = null;
-                    
+                    playerGuesses++
                 }
             }
-        })
-    });
-}    
+            renderGuesses()
+        });
+    })
+}
 
-
-function renderBoard() {
-
+function renderGuesses() {
+    playerGuessEl.innerText = `Guesses: ${playerGuesses}`
 }
 
 function cardRandomize() {
@@ -119,6 +125,4 @@ function checkMatch() {
         }
     }
 }
-function restart() {
-    
-}
+//function restartGame() {}

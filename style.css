@@ -21,6 +21,7 @@ header {
 #guess-limit, #player-guesses {
     font-family: 'Bungee Hairline', cursive;
     font-size: 3vmin;
+    padding: 0%;
 }
 
 h1 {
@@ -121,10 +122,6 @@ button:hover {
     transform:translateY(45px);
 }
 
-#end-modal {
-    visibility: hidden;
-}
-
 .modal > h1 {
     text-align: center;
     color: white;
@@ -139,6 +136,14 @@ button:hover {
     font-family:  'Bungee Hairline', cursive;
     margin-top: 2vmin;
     font-size: 2vmin; 
+}
+
+#win-modal {
+
+}
+
+#loss-modal {
+    
 }
 
 .inactive {
