@@ -77,8 +77,8 @@ button:hover {
     cursor: pointer;
 }
 
-#replay-button {
-    visibility: hidden;
+#end-modal > #replay-button {
+    visibility: visible;
 }
 
 #start {
@@ -138,14 +138,13 @@ button:hover {
     font-size: 2vmin; 
 }
 
-#win-modal {
-
-}
-
-#loss-modal {
-    
+#end-modal {
+    display:flex;
+    height: 40vmin;
+    justify-content: center;
+    align-items: center;
 }
 
 .inactive {
-    display: none;
+visibility: hidden;
 }

@@ -2,19 +2,18 @@
 const guessLimit = 20
 const randomization = []
 /*----- state variables -----*/
-let playerGuesses = 0
+let playerGuesses = guessLimit
 let board
 let firstChoice = null
 let secondChoice = null
 let matchCount = 0           
 /*----- cached elements  -----*/
 const cardsEl = document.querySelectorAll("#card")
-const playAgainBtn = document.querySelectorAll("replay-button")
+const playAgainBtn = document.getElementById("#replay-button")
 const startBtn = document.getElementById("start")
 const startModalEl = document.getElementById("start-modal")
-const winModalEl = document.getElementById("win-modal")
-const lossModalEl = document.getElementById("loss-modal")
-const playerGuessEl = document.getElementById("player-guesses")
+const endModalEl = document.getElementById("end-modal")
+const playerGuessEl = document.getElementById("guess-limit")
 const boardEl = document.querySelector('#board')
 /*----- event listeners -----*/
 //playAgainBtn.addEventListener('click', restart);
@@ -54,15 +53,6 @@ function handleClick() {
                     firstChoice = null
                     secondChoice = null
                     matchCount++
-                    if (matchCount === 8 && playerGuesses < guessLimit) {
-                        winModalEl.classList.remove("inactive")
-                        playAgainBtn.style.visibility = "visible"
-                        boardEl.style.pointerEvents = 'none'
-                    } else if (matchCount !== 8 && playerGuesses > guessLimit) {
-                        lossModalEl.classList.remove("inactive")
-                        playAgainBtn.style.visibility = "visible"
-                        boardEl.style.pointerEvents = 'none'
-                    }
                 } else {
                     firstChoice.classList.toggle('un-flipped')
                     firstChoice.classList.toggle('flipped')
@@ -70,16 +60,32 @@ function handleClick() {
                     secondChoice.classList.toggle('flipped')
                     firstChoice = null;
                     secondChoice = null;
-                    playerGuesses++
+                    playerGuesses--
                 }
             }
             renderGuesses()
+            checkWin()
         });
     })
 }
 
+function checkWin() {
+    if (matchCount >= 8 && playerGuesses > 0) {
+        endModalEl.classList.remove("inactive")
+        endModalEl.innerHTML = `<h1>Congrats! You've Won!</h1>`
+        //make play again button appear! 
+        boardEl.style.pointerEvents = 'none'
+    } else if (matchCount < 8 && playerGuesses < 0) {
+        endModalEl.classList.remove("inactive")
+        endModalEl.innerHTML = `<h1>Better Luck Next Time...</h1>`
+        //make play again button appear! 
+        boardEl.style.pointerEvents = 'none'
+        playerGuessEl.innerText = `Guesses Left: 0`
+    }
+}
+
 function renderGuesses() {
-    playerGuessEl.innerText = `Guesses: ${playerGuesses}`
+    playerGuessEl.innerText = `Guesses Left: ${playerGuesses}`
 }
 
 function cardRandomize() {
@@ -89,40 +95,4 @@ function cardRandomize() {
     });    
 }
 
-function checkMatch() {
-    let firstChoice
-    let secondChoice
-    let matchCount = 0
-
-    if (!firstChoice && !secondChoice) {
-        firstChoice = card;
-        card.classList.toggle('un-flipped')
-        card.classList.toggle('flipped')
-        } else if (firstChoice && !secondChoice) {
-        secondChoice = card;
-        card.classList.toggle('un-flipped')
-        card.classList.toggle('flipped');
-        if (firstChoice.innerHTML === secondChoice.innerHTML) {
-            firstChoice.style.pointerEvents = 'none';
-            secondChoice.style.pointerEvents = 'none';
-            firstChoice = null;
-            secondChoice = null;
-            matchCount++;
-            if (matchCount>= 8) setTimeout(() => alert('Game done! Refresh page to replay.'), 2000 );
-        } else {
-            firstChoice.classList.toggle('un-flipped');
-            firstChoice.classList.toggle('flipped')
-            secondChoice.classList.toggle('un-flipped')
-            secondChoice.classList.toggle('flipped');
-            setTimeout(() => {
-                firstChoice.classList.toggle('flipped');
-                secondChoice.classList.toggle('flipped');
-                firstChoice.classList.toggle('un-flipped');
-                secondChoice.classList.toggle('un-flipped');
-                firstChoice = null;
-                secondChoice = null;
-            }, 2000);
-        }
-    }
-}
 //function restartGame() {}

@@ -15,8 +15,7 @@
 <body>
     <header>Concentration</header>
     
-    <section id="guess-limit">Guess Limit: 20</section>
-    <section id="player-guesses">Guesses: 0</section>
+    <section id="guess-limit">Guesses Left: 20</section>
     
     <div class="modal" id= "start-modal" role="alert">
         <h1>Welcome To Concentration</h1>
@@ -25,17 +24,12 @@
             <li>click the cards to reveal the images.</li>
             <li>match two of each image.</li>
             <li>Correctly match all of the images to win.</li>
-            <li>keep track of your guesses though, if you go beyond the limit you lose.</li>
+            <li>keep track of your guesses though, if you run out...you lose.</li>
         </ol>
         <button class="start-button" id="start" >Start Game</button>
     </div>
 
-    <div class="modal inactive" id="win-modal" role="alert">
-        <p>Congratulations! You Won!</p>
-        <button id="replay-button">PLAY AGAIN?</button>
-    </div>
-    <div class="modal inactive" id="loss-modal" role="alert">
-        <p>Better Luck Next Time...</p>
+    <div class="modal inactive" id="end-modal" role="alert">
         <button id="replay-button">PLAY AGAIN?</button>
     </div>
 
