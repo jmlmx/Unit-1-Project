@@ -12,6 +12,7 @@ const playAgainBtn = document.getElementById("#replay-button")
 const startBtn = document.getElementById("start")
 const startModalEl = document.getElementById("start-modal")
 const endModalEl = document.getElementById("end-modal")
+const endMessageEl = document.getElementById("end-message")
 const playerGuessEl = document.getElementById("guess-limit")
 const boardEl = document.querySelector('#board')
 /*----- event listeners -----*/
@@ -67,13 +68,13 @@ function handleClick() {
 function checkWin() {
     if (matchCount >= 8 && playerGuesses > 0) {
         endModalEl.classList.remove("inactive")
-        endModalEl.innerHTML = `<h1>Congrats! You've Won!</h1>`
-        //make play again button appear! 
+        endMessageEl.innerText = `Congrats! You've Won!`
+        playAgainBtn.style.visibility = "visible"
         boardEl.style.pointerEvents = 'none'
     } else if (matchCount < 8 && playerGuesses < 0) {
         endModalEl.classList.remove("inactive")
-        endModalEl.innerHTML = `<h1>Better Luck Next Time...</h1>`
-        //make play again button appear! 
+        endMessageEl.innerText = `Better Luck Next Time...`
+        playAgainBtn.style.visibility = "visible"
         boardEl.style.pointerEvents = 'none'
         playerGuessEl.innerText = `Guesses Left: 0`
     }

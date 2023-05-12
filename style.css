@@ -78,7 +78,7 @@ button:hover {
 }
 
 #end-modal > #replay-button {
-    display: none;}
+}
 
 #start {
     position: absolute;
@@ -139,6 +139,7 @@ button:hover {
 
 #end-modal {
     display:flex;
+    flex-direction: column;
     height: 40vmin;
     justify-content: center;
     align-items: center;
