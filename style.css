@@ -78,8 +78,7 @@ button:hover {
 }
 
 #end-modal > #replay-button {
-    visibility: visible;
-}
+    display: none;}
 
 #start {
     position: absolute;

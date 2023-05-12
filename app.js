@@ -54,12 +54,14 @@ function handleClick() {
                     secondChoice = null
                     matchCount++
                 } else {
-                    firstChoice.classList.toggle('un-flipped')
-                    firstChoice.classList.toggle('flipped')
-                    secondChoice.classList.toggle('un-flipped')
-                    secondChoice.classList.toggle('flipped')
-                    firstChoice = null;
-                    secondChoice = null;
+                    setTimeout(() => {
+                        firstChoice.classList.toggle('un-flipped')
+                        firstChoice.classList.toggle('flipped')
+                        secondChoice.classList.toggle('un-flipped')
+                        secondChoice.classList.toggle('flipped')
+                        firstChoice = null;
+                        secondChoice = null;
+                    }, 800)
                     playerGuesses--
                 }
             }
