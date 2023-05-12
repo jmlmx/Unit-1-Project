@@ -3,7 +3,6 @@ const guessLimit = 20
 const randomization = []
 /*----- state variables -----*/
 let playerGuesses = guessLimit
-let board
 let firstChoice = null
 let secondChoice = null
 let matchCount = 0           
@@ -21,12 +20,6 @@ startBtn.addEventListener('click', startGame)
 /*----- functions -----*/
 
 function Init() {
-board = [
-    [0, 0, 0, 0],
-    [0, 0, 0, 0],
-    [0, 0, 0, 0],
-    [0, 0, 0, 0]
-]
 cardRandomize()
 }
 
