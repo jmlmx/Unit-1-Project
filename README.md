@@ -13,11 +13,12 @@ HTML, CSS, Javascript and VS Code
 
 ## Getting Started:  
 
-file:///Users/jamalarmondmayon/portfolio-projects/projects/unit-1-project/index.html
+### Game Link:
 
-http://127.0.0.1:5500/
+https://jmlmx.github.io/Unit-1-Project/
 
-Instructions are in the game
+Try to match the all the cards on the board
+click  two cards to check whether they match or not if you can match all the images before you run out of guesses...YOU WIN!
 
 ## Planned Future Enhancements:  
 -Two Player Functionality with the player with the most matches winning
