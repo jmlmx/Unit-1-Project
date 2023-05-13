@@ -77,9 +77,6 @@ button:hover {
     cursor: pointer;
 }
 
-#end-modal > #replay-button {
-}
-
 #start {
     position: absolute;
     top: 70%;
@@ -92,17 +89,17 @@ button:hover {
     border-radius: 2vmin;
     border: .1vmin solid grey;
     cursor: pointer;
-    
-    &:hover{
+}
+    #start:hover{
         background-color: black;
         color: white;
         border: 1px solid white;
     }
 
-    &:active{
+    #start:active{
         transform: scale(0.9);
     }
-}
+
 
 .modal {
     position: fixed;

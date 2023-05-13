@@ -8,7 +8,7 @@ let secondChoice = null
 let matchCount = 0           
 /*----- cached elements  -----*/
 const cardsEl = document.querySelectorAll("#card")
-const playAgainBtn = document.getElementById("#replay-button")
+const playAgainBtn = document.getElementById("replay-button")
 const startBtn = document.getElementById("start")
 const startModalEl = document.getElementById("start-modal")
 const endModalEl = document.getElementById("end-modal")
@@ -16,13 +16,9 @@ const endMessageEl = document.getElementById("end-message")
 const playerGuessEl = document.getElementById("guess-limit")
 const boardEl = document.querySelector('#board')
 /*----- event listeners -----*/
-//playAgainBtn.addEventListener('click', restart);
+playAgainBtn.addEventListener('click', restartGame);
 startBtn.addEventListener('click', startGame)
 /*----- functions -----*/
-
-function Init() {
-cardRandomize()
-}
 
 function startGame() {
     startModalEl.classList.add('inactive');
@@ -66,17 +62,15 @@ function handleClick() {
 }
 
 function checkWin() {
-    if (matchCount >= 8 && playerGuesses > 0) {
+    if (matchCount >= 8 && playerGuesses >= 0) {
         endModalEl.classList.remove("inactive")
         endMessageEl.innerText = `Congrats! You've Won!`
-        playAgainBtn.style.visibility = "visible"
         boardEl.style.pointerEvents = 'none'
     } else if (matchCount < 8 && playerGuesses < 0) {
+        playerGuessEl.innerText = `Guesses Left: 0`
         endModalEl.classList.remove("inactive")
         endMessageEl.innerText = `Better Luck Next Time...`
-        playAgainBtn.style.visibility = "visible"
         boardEl.style.pointerEvents = 'none'
-        playerGuessEl.innerText = `Guesses Left: 0`
     }
 }
 
@@ -91,4 +85,21 @@ function cardRandomize() {
     });    
 }
 
-//function restartGame() {}
+function renderNewCards() {
+    cardsEl.forEach(function(card) {
+        card.classList.add("un-flipped")
+        card.classList.remove("flipped")
+        card.style.pointerEvents = "all"
+    })
+    cardRandomize()
+}
+
+function clearValues() {
+    endModalEl.classList.add("inactive")
+    playerGuesses = 20
+    matchCount = 0
+}
+
+function restartGame() {
+    window.location.reload()
+}
