@@ -11,6 +11,71 @@ body {
     align-items: center;
 }
 
+#start {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    width: 15vmin;
+    height: 10vmin;
+    margin-top: -20px;
+    margin-left: -75px;
+    color: black;
+    border-radius: 2vmin;
+    border: .1vmin solid grey;
+    cursor: pointer;
+}
+    #start:hover{
+        background-color: black;
+        color: white;
+        border: 1px solid white;
+    }
+
+    #start:active{
+        transform: scale(0.9);
+    }
+
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 50vmin;
+    height: 60vmin;
+    margin-left: -230px;
+    margin-right: 240px;
+    margin-top: -300px;
+    background: black;
+    border-radius: 10%;
+    z-index: 100;
+    visibility: visible;
+    opacity: .9;
+    transform:translateY(45px);
+}
+
+.modal > h1 {
+    text-align: center;
+    color: white;
+    font-family:  'Bungee Hairline', cursive;
+    margin-top: 3vmin;
+
+}
+
+.modal > p, li {
+    text-align: center;
+    color: white;
+    font-family:  'Bungee Hairline', cursive;
+    margin-top: 2vmin;
+    font-size: 2vmin; 
+}
+
+#end-modal {
+    display:flex;
+    flex-direction: column;
+    height: 40vmin;
+    justify-content: center;
+    align-items: center;
+}
+
 header {
     font-family: 'Monoton', cursive;
     font-size: 6vmin;
@@ -77,70 +142,6 @@ button:hover {
     cursor: pointer;
 }
 
-#start {
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    width: 15vmin;
-    height: 10vmin;
-    margin-top: -20px;
-    margin-left: -75px;
-    color: black;
-    border-radius: 2vmin;
-    border: .1vmin solid grey;
-    cursor: pointer;
-}
-    #start:hover{
-        background-color: black;
-        color: white;
-        border: 1px solid white;
-    }
-
-    #start:active{
-        transform: scale(0.9);
-    }
-
-
-.modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 50vmin;
-    height: 60vmin;
-    margin-left: -230px;
-    margin-right: 240px;
-    margin-top: -300px;
-    background: black;
-    border-radius: 10%;
-    z-index: 100;
-    visibility: visible;
-    opacity: .9;
-    transform:translateY(45px);
-}
-
-.modal > h1 {
-    text-align: center;
-    color: white;
-    font-family:  'Bungee Hairline', cursive;
-    margin-top: 3vmin;
-
-}
-
-.modal > p, li {
-    text-align: center;
-    color: white;
-    font-family:  'Bungee Hairline', cursive;
-    margin-top: 2vmin;
-    font-size: 2vmin; 
-}
-
-#end-modal {
-    display:flex;
-    flex-direction: column;
-    height: 40vmin;
-    justify-content: center;
-    align-items: center;
-}
 
 .inactive {
 visibility: hidden;
