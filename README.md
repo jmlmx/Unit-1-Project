@@ -1,5 +1,5 @@
-Game Title: Concentration
-simple memory match game that challenges you to memorize the position of symbols/images and match all of them within a set amount of guesses.
+Game Title: Concentration,
+A simple memory match game that challenges you to memorize the position of symbols/images and match all of them within a set amount of guesses.
 
 Screenshots:
 ![Screen Shot 2023-05-12 at 9 34 20 PM](https://github.com/jmlmx/Unit-1-Project/assets/128641987/725a7d31-00c4-4706-8e31-989e16bc4cb2)
@@ -12,9 +12,9 @@ Technologies Used:
 HTML, CSS, Javascript and VS Code
 
 Getting Started:
-file:///Users/jamalarmondmayon/portfolio-projects/projects/unit-1-project/index.html
+[file:///Users/jamalarmondmayon/portfolio-projects/projects/unit-1-project/index.html]
 
-Instructions are in the start Modal
+Instructions are in the game
 
 
 **Source Citations:**:
